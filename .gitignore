@@ -1,0 +1,20 @@
+# course config files
+*.yaml
+
+# gradle
+.gradle/
+/gradle/
+/gradlew
+/gradlew.bat
+build
+out
+
+# idea config
+.idea
+
+# stages
+/Cinema Room Manager/Print seats/
+/Cinema Room Manager/Calculate the profit/
+/Cinema Room Manager/Set the ticket price/
+/Cinema Room Manager/Add menu to your application/
+/Cinema Room Manager/Manage stats and make your app error-prone/

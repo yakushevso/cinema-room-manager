@@ -1,32 +1,29 @@
 package cinema;
 
+import java.util.*;
+
 public class Cinema {
-    private static final int ROW = 7;
-    private static final int SEAT = 8;
+    public static void profitCalculation() {
+        try (Scanner sc = new Scanner(System.in)) {
+            System.out.println("Enter the number of rows:");
+            int rows = sc.nextInt();
 
-    public static void printField() {
-        System.out.println("Cinema:");
+            System.out.println("Enter the number of seats in each row:");
+            int seat = sc.nextInt();
 
-        for (int i = 0; i <= ROW; i++) {
-            if (i == 0) {
-                System.out.print("  ");
+            int total;
+
+            if (rows * seat <= 60) {
+                total = rows * seat * 10;
             } else {
-                System.out.print(i + " ");
-            }
-            
-            for (int j = 0; j < SEAT; j++) {
-                if (i == 0) {
-                    System.out.print(j + 1 + " ");
-                } else {
-                    System.out.print("S ");
-                }
+                total =  rows / 2 * seat * 10 + (rows % 2 == 0 ? rows / 2 : rows / 2 + 1) * seat * 8;
             }
 
-            System.out.println();
+            System.out.printf("Total income:\n$%d", total);
         }
     }
 
     public static void main(String[] args) {
-        printField();
+        profitCalculation();
     }
 }
